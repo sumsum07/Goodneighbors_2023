@@ -1,0 +1,9 @@
+.rounded-button-02 {
+    width: 160px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgba(95, 145, 101, 0.8);
+    color: aliceblue;
+    font-size: 18px; 
+    
+  }
