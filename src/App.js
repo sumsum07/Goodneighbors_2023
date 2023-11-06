@@ -1,4 +1,3 @@
-
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Intro from './pages/Intro';
@@ -7,17 +6,22 @@ import Letter from './pages/Letter';
 import News from './pages/News';
 
 function App() {
-  return (
-  <div className="App">
-    <Routes>
-      <Route path="/" element={<Intro />} />
-      <Route path="/1" element={<Intro1 />} />
-      <Route path="/Letter" element={<Letter />} />
-      <Route path="/News" element={<News/>} />
-    </Routes>
+  // 페이지의 기본 배경 색상 스타일
+  const pageStyle = {
+    backgroundColor: '#857c75', // 갈색 배경 색상 (예시)
+    minHeight: '100vh', // 화면 높이에 맞게 배경 색상 확장
+  };
 
-  </div>)
-  ;
+  return (
+    <div className="App" style={pageStyle}>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/1" element={<Intro1 />} />
+        <Route path="/Letter" element={<Letter />} />
+        <Route path="/News" element={<News />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
