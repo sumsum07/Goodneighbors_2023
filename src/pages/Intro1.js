@@ -11,7 +11,7 @@ const Intro1 = () => {
       };
     
       return (
-        <div className="page" style={{ position: "relative" }}>
+        <div className="page" style={{ position: "relative", overflow: "hidden" }}>
           <div style={{ position: "relative", width: "100%", height: "100vh" }}>
             <img
               src={img}
