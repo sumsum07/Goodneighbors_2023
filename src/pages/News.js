@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img from "../img/003.png";
-import newsVideo from "../vidio/news.mp4";
+//import newsVideo from "../vidio/news.mp4";
 import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png"; 
 import './button.css';
@@ -31,19 +31,8 @@ const News = () => {
             objectFit: "cover",
           }}
         />
-        <video
-          src={newsVideo}
-          controls
-          style={{
-            position: "absolute",
-            top: "45%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "74%",
-            height: "27%",
-            objectFit: "cover",
-          }}
-        />
+        
+        
         {cardVisible && (
           <img
             src={cardImg}
