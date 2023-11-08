@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import img from "../img/003.png";
-import newsVideo from "../vidio/news.mp4"; // 동영상 파일 import
+import newsVideo from "../vidio/news.mp4";
+import cardImg from "../img/card.png";
+import letterImg from "../img/letter.png"; 
 import './button.css';
 import { Link } from "react-router-dom";
 
 const News = () => {
+  const [cardVisible, setCardVisible] = useState(false); // cardVisible 상태 변수 추가
+  const [letterVisible, setLetterVisible] = useState(false); // letterVisible 상태 변수 추가
+
   const handleNextClick = () => {
-    // 동영상을 제어하는 로직을 추가할 수 있습니다.
+    if (!cardVisible) {
+      setCardVisible(true); // cardVisible 상태를 true로 변경
+    } else if (!letterVisible) {
+      setCardVisible(false);
+      setLetterVisible(true); // letterVisible 상태를 true로 변경
+    }
   };
 
   return (
@@ -21,31 +31,58 @@ const News = () => {
             objectFit: "cover",
           }}
         />
-        {/* 동영상 추가 */}
         <video
           src={newsVideo}
-          controls  // 컨트롤 버튼을 표시합니다 (재생, 일시 정지, 음량 조절 등)
+          controls
           style={{
             position: "absolute",
-            top: "45%",  // 화면 상단에서 50% 위치로 이동
-            left: "50%",  // 화면 왼쪽에서 50% 위치로 이동
-            transform: "translate(-50%, -50%)",  // 중앙 정렬
-            width: "74%",  // 너비 조절
-            height: "27%",  // 높이 조절
+            top: "45%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "74%",
+            height: "27%",
             objectFit: "cover",
           }}
         />
+        {cardVisible && (
+          <img
+            src={cardImg}
+            alt="Card"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "150%",
+              height: "150%",
+              objectFit: "contain",
+            }}
+          />
+        )}
+        {letterVisible && (
+          <img
+            src={letterImg}
+            alt="Letter"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "150%",
+              height: "150%",
+              objectFit: "contain",
+            }}
+          />
+        )}
       </div>
-      {/* 이미지와 버튼을 감싸는 컨테이너 추가 */}
       <div
-         style={{
+        style={{
           position: "absolute",
-          top: "70%", // 원하는 높이로 조정
-          left: "25%", // 원하는 왼쪽 위치로 조정
-          transform: "translate(-50%, -50%)", // 중앙 정렬 유지
+          top: "70%",
+          left: "25%",
+          transform: "translate(-50%, -50%)",
         }}
       >
-        
         <Link to="/News">
           <button className="rounded-button-02" onClick={handleNextClick}>
             Next →
