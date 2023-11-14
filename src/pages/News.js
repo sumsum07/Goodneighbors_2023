@@ -4,6 +4,7 @@ import newsVideo from "../vidio/news.mp4";
 import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png";
 import announceImg from "../img/announce.png";
+
 import "./button.css";
 
 const News = () => {
@@ -43,6 +44,9 @@ const News = () => {
             width: "100%",
             height: "85%",
             objectFit: "cover",
+            position: "absolute",  // 이미지의 위치를 조정하기 위해 absolute로 설정
+            top: "50%",            // 수직 가운데로 이동
+            transform: "translate(-50%, -50%)",  // 이미지의 높이의 절반만큼 위로 이동하여 가운데 정렬
           }}
         />
 
@@ -53,7 +57,7 @@ const News = () => {
             position: "absolute",
             top: "45%",
             left: "50%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-50%, -30%)",
             width: "89%",
             height: "25%",
             objectFit: "cover",
