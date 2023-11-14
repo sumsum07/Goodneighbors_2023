@@ -4,6 +4,7 @@ import Intro from './pages/Intro';
 import Intro1 from './pages/Intro1';
 import Letter from './pages/Letter';
 import News from './pages/News';
+import Last from './pages/Last';
 
 function App() {
   // 페이지의 기본 배경 색상 스타일
@@ -19,6 +20,7 @@ function App() {
         <Route path="/1" element={<Intro1 />} />
         <Route path="/Letter" element={<Letter />} />
         <Route path="/News" element={<News />} />
+        <Route path="/Last" element={<Last />} />
       </Routes>
     </div>
   );
