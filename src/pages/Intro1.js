@@ -37,7 +37,7 @@ const Intro1 = () => {
       >
         <img
           src={stringImg}
-          alt="Resized Image"
+          alt="Resized String"
           style={{ maxWidth: "100%", height: "auto" }} // Use maxWidth instead of width
         />
       </div>
