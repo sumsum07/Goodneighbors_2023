@@ -5,7 +5,6 @@ import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png";
 import announceImg from "../img/announce.png";
 import "./button.css";
-import { Link } from "react-router-dom";
 
 const News = () => {
   const [cardVisible, setCardVisible] = useState(false);

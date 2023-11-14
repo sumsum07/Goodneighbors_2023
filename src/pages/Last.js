@@ -1,7 +1,6 @@
 import React from "react";
 import img from "../img/image 14.png";
 import meetImg from "../img/합격.png";
-import { Link } from "react-router-dom";
 
 const Last = () => {
   return (
