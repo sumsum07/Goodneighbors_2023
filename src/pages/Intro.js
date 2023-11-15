@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import img from "../img/006.png";
 import './button.css';
 import { Link } from "react-router-dom";
-//import nextSound from "../sound/next.mp3";
+import nextSound from "../sound/next.mp3";
 //import backSound from "../sound/전체bgm.mp3";
-//import useSound from 'use-sound'; // 이 부분을 추가하세요.
+import useSound from 'use-sound'; // 이 부분을 추가하세요.
 
 const Intro = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  //const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
+  const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
   const handleImageLoad = () => {
     // 이미지가 로딩 완료되면 이 함수가 호출됨
     setImageLoaded(true);
   };
 
   const handleNextClick = () => {
-    //playNextSound();
+    playNextSound();
     
     // 이미지 로딩 후에 버튼을 클릭하는 경우 실행할 작업
   };

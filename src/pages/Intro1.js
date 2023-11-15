@@ -3,9 +3,13 @@ import img from "../img/007.png";
 import './button.css';
 import { Link } from "react-router-dom";
 import stringImg from "../img/image 17.png";
-
+import nextSound from "../sound/next.mp3";
+//import backSound from "../sound/전체bgm.mp3";
+import useSound from 'use-sound'; // 이 부분을 추가하세요.
 const Intro1 = () => {
+  const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
   const handleNextClick = () => {
+    playNextSound();
     // Handle the next click logic if needed
   };
 

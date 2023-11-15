@@ -5,7 +5,12 @@ import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png";
 import announceImg from "../img/announce.png";
 import sayImg from "../img/image 18.png";
-import sayImg2 from "../img/image 19.png"
+import sayImg2 from "../img/image 19.png";
+import nextSound from "../sound/next.mp3";
+//import backSound from "../sound/전체bgm.mp3";
+import useSound from 'use-sound'; // 이 부분을 추가하세요.
+import flySound from "../sound/편지날아옴.mp3";
+import letterSound from "../sound/편지펼침.mp3";
 import "./button.css";
 
 const News = () => {
@@ -15,19 +20,25 @@ const News = () => {
   const [submitVisible, setSubmitVisible] = useState(false);
   const [sayVisible, setSayVisible] = useState(true); // sayImg의 상태
   const [say2Visible, setSay2Visible] = useState(false); // sayImg2의 상태
+  const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
+  const [playFlySound] = useSound(flySound); // 이 부분을 추가하세요.
+  const [playLetterSound] = useSound(letterSound);
 
   const handleNextClick = () => {
+    playNextSound();
     if (sayVisible) { // sayImg가 보일 때
       setSayVisible(false);
       setSay2Visible(true);
     } else if (say2Visible) { // sayImg2가 보일 때
       setSay2Visible(false);
       setCardVisible(true);
+      playFlySound();
     } else if (!cardVisible && !letterVisible) {
       setCardVisible(true);
     } else if (!letterVisible) {
       setCardVisible(false);
       setLetterVisible(true);
+      playLetterSound();
     } else if (letterVisible && !announceVisible) {
       setLetterVisible(false);
       setAnnounceVisible(true);
@@ -36,6 +47,7 @@ const News = () => {
   };
 
   const handleFormButtonClick = () => {
+    playNextSound();
     // Reset the state when the form button is clicked
     setCardVisible(false);
     setLetterVisible(false);
