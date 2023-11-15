@@ -77,6 +77,7 @@ const News = () => {
         <video
           src={newsVideo}
           controls
+          autoPlay
           style={{
             position: "absolute",
             top: "45%",
