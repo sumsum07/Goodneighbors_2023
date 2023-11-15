@@ -6,6 +6,7 @@ import Letter from './pages/Letter';
 import News from './pages/News';
 import Last from './pages/Last';
 
+
 function App() {
   // 페이지의 기본 배경 색상 스타일
   const pageStyle = {

@@ -4,7 +4,8 @@ import newsVideo from "../vidio/news.mp4";
 import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png";
 import announceImg from "../img/announce.png";
-
+import sayImg from "../img/image 18.png";
+import sayImg2 from "../img/image 19.png"
 import "./button.css";
 
 const News = () => {
@@ -12,9 +13,17 @@ const News = () => {
   const [letterVisible, setLetterVisible] = useState(false);
   const [announceVisible, setAnnounceVisible] = useState(false);
   const [submitVisible, setSubmitVisible] = useState(false);
+  const [sayVisible, setSayVisible] = useState(true); // sayImg의 상태
+  const [say2Visible, setSay2Visible] = useState(false); // sayImg2의 상태
 
   const handleNextClick = () => {
-    if (!cardVisible && !letterVisible) {
+    if (sayVisible) { // sayImg가 보일 때
+      setSayVisible(false);
+      setSay2Visible(true);
+    } else if (say2Visible) { // sayImg2가 보일 때
+      setSay2Visible(false);
+      setCardVisible(true);
+    } else if (!cardVisible && !letterVisible) {
       setCardVisible(true);
     } else if (!letterVisible) {
       setCardVisible(false);
@@ -32,7 +41,10 @@ const News = () => {
     setLetterVisible(false);
     setAnnounceVisible(false);
     setSubmitVisible(false);
+    setSayVisible(true);
+    setSay2Visible(false);
   };
+
 
   return (
     <div className="page" style={{ position: "relative", overflow: "hidden" }}>
@@ -108,6 +120,36 @@ const News = () => {
               objectFit: "contain",
             }}
           />
+        )}
+        {sayVisible && (
+          <img
+            src={sayImg}
+            alt="Say"
+            style={{
+              position: "absolute",
+              top: "17%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "100%",
+              height: "150%",
+              objectFit: "contain",
+            }}
+          />
+        )}
+        {say2Visible && (
+          <img
+            src={sayImg2}
+            alt="Say2"
+            style={{
+              position: "absolute",
+              top: "18%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "100%",
+              height: "150%",
+              objectFit: "contain",
+            }}
+            />
         )}
       </div>
       <div
