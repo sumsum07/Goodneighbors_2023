@@ -3,7 +3,7 @@ import img from "../img/008.png";
 import newsVideo from "../vidio/news.mp4";
 import cardImg from "../img/card.png";
 import letterImg from "../img/letter.png";
-import announceImg from "../img/announce.png";
+import announceImg from "../img/newNo.png";
 import sayImg from "../img/image 18.png";
 import sayImg2 from "../img/image 19.png";
 import nextSound from "../sound/next.mp3";

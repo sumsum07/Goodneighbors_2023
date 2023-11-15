@@ -4,10 +4,12 @@ import './button.css';
 import { Link } from "react-router-dom";
 import stringImg from "../img/image 17.png";
 import nextSound from "../sound/next.mp3";
-//import backSound from "../sound/전체bgm.mp3";
-import useSound from 'use-sound'; // 이 부분을 추가하세요.
+import useSound from 'use-sound';
+import memo from '../img/image 38.png';
+
 const Intro1 = () => {
-  const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
+  const [playNextSound] = useSound(nextSound);
+
   const handleNextClick = () => {
     playNextSound();
     // Handle the next click logic if needed
@@ -36,13 +38,34 @@ const Intro1 = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
-          width: "120%", // Set width to 100% to ensure proper centering
+          width: "120%",
         }}
       >
         <img
           src={stringImg}
           alt="Resized String"
-          style={{ maxWidth: "100%", height: "auto" }} // Use maxWidth instead of width
+          style={{
+            maxWidth: "95%",
+            height: "auto",
+            position: "absolute",
+            top: "0",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 2, // Set zIndex to ensure it's in front
+          }}
+        />
+        <img
+          src={memo}
+          alt="Memo"
+          style={{
+            maxWidth: "90%",
+            height: "auto",
+            position: "absolute",
+            top: "10%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            opacity: 0.88,
+          }}
         />
       </div>
 
@@ -50,7 +73,7 @@ const Intro1 = () => {
       <div
         style={{
           position: "absolute",
-          bottom: 70,
+          bottom: 100,
           width: "100%",
           textAlign: "center",
         }}
