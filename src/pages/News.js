@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import img from "../img/008.png";
 import newsVideo from "../vidio/news.mp4";
-import cardImg from "../img/card.png";
-import letterImg from "../img/letter.png";
+import cardImg from "../img/newCard.png";
+import letterImg from "../img/newLetter.png";
 import announceImg from "../img/newNo.png";
 import sayImg from "../img/image 18.png";
 import sayImg2 from "../img/image 19.png";
 import nextSound from "../sound/next.mp3";
-//import backSound from "../sound/전체bgm.mp3";
-import useSound from 'use-sound'; // 이 부분을 추가하세요.
+import useSound from 'use-sound';
 import flySound from "../sound/편지날아옴.mp3";
 import letterSound from "../sound/편지펼침.mp3";
 import "./button.css";
@@ -20,9 +19,27 @@ const News = () => {
   const [submitVisible, setSubmitVisible] = useState(false);
   const [sayVisible, setSayVisible] = useState(true); // sayImg의 상태
   const [say2Visible, setSay2Visible] = useState(false); // sayImg2의 상태
-  const [playNextSound] = useSound(nextSound); // 이 부분을 추가하세요.
-  const [playFlySound] = useSound(flySound); // 이 부분을 추가하세요.
+  const [playNextSound] = useSound(nextSound);
+  const [playFlySound] = useSound(flySound);
   const [playLetterSound] = useSound(letterSound);
+  
+  // 비디오 재생 상태를 관리하는 상태를 추가
+  const [isVideoPlaying, setVideoPlaying] = useState(false);
+
+  // 비디오 참조를 위한 ref를 생성
+  const videoRef = useRef(null);
+
+  // 비디오를 재생하거나 멈추는 함수
+  const toggleVideoPlay = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setVideoPlaying(!isVideoPlaying);
+    }
+  };
 
   const handleNextClick = () => {
     playNextSound();
@@ -57,7 +74,6 @@ const News = () => {
     setSay2Visible(false);
   };
 
-
   return (
     <div className="page" style={{ position: "relative", overflow: "hidden" }}>
       <div style={{ position: "relative", width: "100%", height: "100vh" }}>
@@ -74,21 +90,6 @@ const News = () => {
           }}
         />
 
-        <video
-          src={newsVideo}
-          controls
-          autoPlay
-          style={{
-            position: "absolute",
-            top: "45%",
-            left: "50%",
-            transform: "translate(-50%, -30%)",
-            width: "89%",
-            height: "25%",
-            objectFit: "cover",
-          }}
-        />
-
         {cardVisible && (
           <img
             src={cardImg}
@@ -100,10 +101,32 @@ const News = () => {
               transform: "translate(-50%, -50%)",
               width: "150%",
               height: "150%",
-              objectFit: "contain",
+              objectFit: "contain"
             }}
           />
         )}
+
+        {/* Render the video only if cardVisible is false */}
+        {(!announceVisible ) && (
+  <video
+    ref={videoRef}
+    src={newsVideo}
+    controls
+    onClick={toggleVideoPlay}
+    style={{
+      position: "absolute",
+      top: "45%",
+      left: "50%",
+      transform: "translate(-50%, -30%)",
+      width: "89%",
+      height: "25%",
+      objectFit: "cover",
+      zIndex: 999,
+    }}
+  />
+)}
+
+
         {letterVisible && (
           <img
             src={letterImg}
@@ -119,6 +142,7 @@ const News = () => {
             }}
           />
         )}
+
         {announceVisible && (
           <img
             src={announceImg}
@@ -131,9 +155,11 @@ const News = () => {
               width: "150%",
               height: "150%",
               objectFit: "contain",
+              //zIndex: 999,  // 이 부분 추가
             }}
           />
         )}
+
         {sayVisible && (
           <img
             src={sayImg}
@@ -143,12 +169,13 @@ const News = () => {
               top: "17%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              width: "100%",
+              width: "113%",
               height: "150%",
               objectFit: "contain",
             }}
           />
         )}
+
         {say2Visible && (
           <img
             src={sayImg2}
@@ -158,13 +185,14 @@ const News = () => {
               top: "18%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              width: "100%",
+              width: "113%",
               height: "150%",
               objectFit: "contain",
             }}
-            />
+          />
         )}
       </div>
+
       <div
         style={{
           position: "absolute",
@@ -180,12 +208,13 @@ const News = () => {
             rel="noopener noreferrer"
             onClick={handleFormButtonClick}
           >
-            <button className="rounded-button-02" style={{ backgroundColor: "rgba(207, 71, 50, 0.8)" }}>
+            <button className="rounded-button-02" style={{ backgroundColor: "rgba(207, 71, 50, 0.8)", transform: "translate(56%, -50%)" }}>
               지원하러 가기
             </button>
           </a>
         ) : (
-          <button className="rounded-button-02" onClick={handleNextClick}>
+          <button className="rounded-button-02"
+        onClick={handleNextClick}>
             Next →
           </button>
         )}
