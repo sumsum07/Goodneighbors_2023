@@ -14,6 +14,7 @@ import "./button.css";
 
 const News = () => {
   const [cardVisible, setCardVisible] = useState(false);
+  const [videoVisible, setVideoVisible] = useState(true);
   const [letterVisible, setLetterVisible] = useState(false);
   const [announceVisible, setAnnounceVisible] = useState(false);
   const [submitVisible, setSubmitVisible] = useState(false);
@@ -49,17 +50,21 @@ const News = () => {
     } else if (say2Visible) { // sayImg2가 보일 때
       setSay2Visible(false);
       setCardVisible(true);
+      setVideoVisible(false);
       playFlySound();
     } else if (!cardVisible && !letterVisible) {
       setCardVisible(true);
+      setVideoVisible(false);
     } else if (!letterVisible) {
       setCardVisible(false);
       setLetterVisible(true);
+      setVideoVisible(false);
       playLetterSound();
     } else if (letterVisible && !announceVisible) {
       setLetterVisible(false);
       setAnnounceVisible(true);
       setSubmitVisible(true);
+      setVideoVisible(false);
     }
   };
 
@@ -107,24 +112,24 @@ const News = () => {
         )}
 
         {/* Render the video only if cardVisible is false */}
-        {(!announceVisible ) && (
-  <video
-    ref={videoRef}
-    src={newsVideo}
-    controls
-    onClick={toggleVideoPlay}
-    style={{
-      position: "absolute",
-      top: "45%",
-      left: "50%",
-      transform: "translate(-50%, -30%)",
-      width: "89%",
-      height: "25%",
-      objectFit: "cover",
-      zIndex: 999,
-    }}
-  />
-)}
+        {videoVisible && (
+          <video
+            ref={videoRef}
+            src={newsVideo}
+            controls
+            onClick={toggleVideoPlay}
+            style={{
+              position: "absolute",
+              top: "45%",
+              left: "50%",
+              transform: "translate(-50%, -30%)",
+              width: "89%",
+              height: "25%",
+              objectFit: "cover",
+              zIndex: 999,
+            }}
+          />
+        )}
 
 
         {letterVisible && (
