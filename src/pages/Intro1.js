@@ -6,7 +6,7 @@ import stringImg from "../img/image 61.png";
 import nextSound from "../sound/next.mp3";
 import useSound from 'use-sound';
 import memo from '../img/image 59.png';
-//import goodImg from '../img/image 4.png';
+import goodImg from '../img/image 4.png';
 
 const Intro1 = () => {
   const [playNextSound] = useSound(nextSound);
@@ -30,6 +30,7 @@ const Intro1 = () => {
           }}
         />
       </div>
+      
       
 
       {/* Centering container for resized image */}
@@ -71,6 +72,22 @@ const Intro1 = () => {
         />
         
       </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "96%",
+          left: "53%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          width: "100%", // Set width to 100% to ensure proper centering
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Resized String"
+          style={{ maxWidth: "25%", height: "auto" }} // Use maxWidth instead of width
+        />
+        </div>
 
       {/* Button container */}
       <div

@@ -11,7 +11,7 @@ import useSound from 'use-sound';
 import flySound from "../sound/편지날아옴.mp3";
 import letterSound from "../sound/편지펼침.mp3";
 import "./button.css";
-//import goodImg from '../img/image 4.png';
+import goodImg from '../img/image 4.png';
 
 const News = () => {
   const [cardVisible, setCardVisible] = useState(false);
@@ -198,6 +198,22 @@ const News = () => {
           />
         )}
       </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "96%",
+          left: "53%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          width: "100%", // Set width to 100% to ensure proper centering
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Resized String"
+          style={{ maxWidth: "25%", height: "auto" }} // Use maxWidth instead of width
+        />
+        </div>
       
 
       <div

@@ -71,7 +71,7 @@ const Intro = () => {
         <img
           src={goodImg}
           alt="Resized String"
-          style={{ maxWidth: "23%", height: "auto" }} // Use maxWidth instead of width
+          style={{ maxWidth: "25%", height: "auto" }} // Use maxWidth instead of width
         />
 
         
