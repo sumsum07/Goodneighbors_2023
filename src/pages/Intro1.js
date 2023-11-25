@@ -6,7 +6,7 @@ import stringImg from "../img/image 61.png";
 import nextSound from "../sound/next.mp3";
 import useSound from 'use-sound';
 import memo from '../img/image 59.png';
-import goodImg from '../img/image 4.png';
+//import goodImg from '../img/image 4.png';
 
 const Intro1 = () => {
   const [playNextSound] = useSound(nextSound);

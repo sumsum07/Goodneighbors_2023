@@ -11,7 +11,7 @@ import useSound from 'use-sound';
 import flySound from "../sound/편지날아옴.mp3";
 import letterSound from "../sound/편지펼침.mp3";
 import "./button.css";
-import goodImg from '../img/image 4.png';
+//import goodImg from '../img/image 4.png';
 
 const News = () => {
   const [cardVisible, setCardVisible] = useState(false);
