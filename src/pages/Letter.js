@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../img/card.png";
 import './fly.css';
-import goodImg from '../img/image 4.png';
+//import goodImg from '../img/image 4.png';
 
 const Letter = () => {
   return (
