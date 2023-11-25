@@ -3,7 +3,7 @@ import img from "../img/008.png";
 import newsVideo from "../vidio/news.mp4";
 import cardImg from "../img/newCard.png";
 import letterImg from "../img/newLetter.png";
-import announceImg from "../img/newNo.png";
+import announceImg from "../img/image 57.png";
 import sayImg from "../img/image 18.png";
 import sayImg2 from "../img/image 19.png";
 import nextSound from "../sound/next.mp3";
@@ -11,6 +11,7 @@ import useSound from 'use-sound';
 import flySound from "../sound/편지날아옴.mp3";
 import letterSound from "../sound/편지펼침.mp3";
 import "./button.css";
+import goodImg from '../img/image 4.png';
 
 const News = () => {
   const [cardVisible, setCardVisible] = useState(false);
@@ -223,6 +224,20 @@ const News = () => {
             Next →
           </button>
         )}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 12,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Good Image"
+          style={{ width: "auto", height: "25px" }}
+        />
       </div>
     </div>
   );

@@ -6,6 +6,8 @@ import nextSound from "../sound/next.mp3";
 //import backSound from "../sound/전체bgm.mp3";
 import useSound from 'use-sound'; // 이 부분을 추가하세요.
 import firstImg from '../img/first.png';
+import goodImg from '../img/image 4.png';
+
 
 const Intro = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -69,6 +71,21 @@ const Intro = () => {
           </Link>
         </div>
       )}
+
+<div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Good Image"
+          style={{ width: "auto", height: "25px" }}
+        />
+      </div>
     </div>
   );
 };

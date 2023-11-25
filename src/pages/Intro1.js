@@ -2,10 +2,11 @@ import React from "react";
 import img from "../img/007.png";
 import './button.css';
 import { Link } from "react-router-dom";
-import stringImg from "../img/image 17.png";
+import stringImg from "../img/image 61.png";
 import nextSound from "../sound/next.mp3";
 import useSound from 'use-sound';
-import memo from '../img/image 38.png';
+import memo from '../img/image 59.png';
+import goodImg from '../img/image 4.png';
 
 const Intro1 = () => {
   const [playNextSound] = useSound(nextSound);
@@ -58,7 +59,7 @@ const Intro1 = () => {
           src={memo}
           alt="Memo"
           style={{
-            maxWidth: "90%",
+            maxWidth: "78%",
             height: "auto",
             position: "absolute",
             top: "10%",
@@ -83,6 +84,20 @@ const Intro1 = () => {
             Next →
           </button>
         </Link>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Good Image"
+          style={{ width: "auto", height: "25px" }}
+        />
       </div>
     </div>
   );
