@@ -198,6 +198,20 @@ const News = () => {
           />
         )}
       </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 12,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Good Image"
+          style={{ width: "auto", height: "25px" }}
+        />
+      </div>
 
       <div
         style={{
@@ -225,20 +239,7 @@ const News = () => {
           </button>
         )}
       </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 12,
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <img
-          src={goodImg}
-          
-          style={{ width: "auto", height: "25px" }}
-        />
-      </div>
+      
     </div>
   );
 };

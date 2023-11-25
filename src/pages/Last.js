@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../img/image 14.png";
 import meetImg from "../img/합격.png";
-import goodImg from '../img/image 4.png';
+//import goodImg from '../img/image 4.png';
 
 const Last = () => {
   return (
@@ -35,20 +35,7 @@ const Last = () => {
           />
         </div>
       </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <img
-          src={goodImg}
-          
-          style={{ width: "auto", height: "25px" }}
-        />
-      </div>
+      
     </div>
   );
 };

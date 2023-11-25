@@ -30,6 +30,20 @@ const Intro1 = () => {
           }}
         />
       </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Good Image"
+          style={{ width: "auto", height: "25px" }}
+        />
+      </div>
 
       {/* Centering container for resized image */}
       <div
@@ -68,6 +82,7 @@ const Intro1 = () => {
             opacity: 0.88,
           }}
         />
+        
       </div>
 
       {/* Button container */}
@@ -85,20 +100,7 @@ const Intro1 = () => {
           </button>
         </Link>
       </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <img
-          src={goodImg}
-          
-          style={{ width: "auto", height: "25px" }}
-        />
-      </div>
+      
     </div>
   );
 };
