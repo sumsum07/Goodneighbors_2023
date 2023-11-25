@@ -95,7 +95,7 @@ const Intro1 = () => {
       >
         <img
           src={goodImg}
-          alt="Good Image"
+          
           style={{ width: "auto", height: "25px" }}
         />
       </div>

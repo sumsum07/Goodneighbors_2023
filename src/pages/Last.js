@@ -45,7 +45,7 @@ const Last = () => {
       >
         <img
           src={goodImg}
-          alt="Good Image"
+          
           style={{ width: "auto", height: "25px" }}
         />
       </div>
