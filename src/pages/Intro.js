@@ -6,7 +6,7 @@ import nextSound from "../sound/next.mp3";
 //import backSound from "../sound/전체bgm.mp3";
 import useSound from 'use-sound'; // 이 부분을 추가하세요.
 import firstImg from '../img/first.png';
-//import goodImg from '../img/image 4.png';
+import goodImg from '../img/image 4.png';
 
 
 const Intro = () => {
@@ -54,6 +54,27 @@ const Intro = () => {
           alt="Resized String"
           style={{ maxWidth: "100%", height: "auto" }} // Use maxWidth instead of width
         />
+
+        
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
+          top: "96%",
+          left: "53%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          width: "100%", // Set width to 100% to ensure proper centering
+        }}
+      >
+        <img
+          src={goodImg}
+          alt="Resized String"
+          style={{ maxWidth: "23%", height: "auto" }} // Use maxWidth instead of width
+        />
+
+        
       </div>
       {/* 이미지가 로딩되면 버튼을 렌더링 */}
       {imageLoaded && (
